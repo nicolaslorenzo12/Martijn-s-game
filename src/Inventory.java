@@ -6,7 +6,7 @@ public class Inventory {
     private final Weapon weapon;
 
     public Inventory(){
-        inventory = new ArrayList<String>();
+        inventory = new ArrayList<>();
         this.weapon = new Weapon();
     }
 

@@ -1,13 +1,24 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Room {
 
     private final Scanner scanner;
     private String direction;
+    private final ArrayList<String> room;
 
     public Room(){
         direction = "whatever";
         scanner = new Scanner(System.in);
+        room = new ArrayList<>();
+        room.add(0,"lobby");
+        room.add(1,"nico's Room");
+        room.add(2,"gaby's Room");
+        room.add(3,"pat's Room");
+        room.add(4,"martijn's Room");
+        room.add(5,"gert's Room");
+        room.add(6,"markus's Room");
+        room.add(7,"stijn's Room");
     }
 
     public void welcomeToLobby(){
