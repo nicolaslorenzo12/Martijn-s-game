@@ -5,35 +5,36 @@ public class Room {
 
     private final Scanner scanner;
     private String direction;
-    private final ArrayList<Room> room;
+    private final ArrayList<Room> rooms;
 
     public Room(String upRoom, String downRoom, String leftRoom, String rightRoom) {
         direction = "whatever";
         scanner = new Scanner(System.in);
-        room = new ArrayList<>();
-        room.add(lobby);
-        room.add(nicoRoom);
-        room.add(martijnRoom);
-        room.add(patRoom);
-        room.add(gabyRoom);
-        room.add(markusRoom);
-        room.add(stijnRoom);
-        room.add(gertRoom);
+        rooms = new ArrayList<>();
+        Room lobby = new Room("nicoRoom", "martijnRoom", "patRoom", "gabyRoom");
+        rooms.add(lobby);
+        Room nicoRoom = new Room(null, "lobby", null, null);
+        rooms.add(nicoRoom);
+        Room martijnRoom = new Room("lobby", "markusRoom", "gertRoom", "stijnRoom");
+        rooms.add(martijnRoom);
+        Room patRoom = new Room(null, null, null, "lobby");
+        rooms.add(patRoom);
+        Room gabyRoom = new Room(null, null, "lobby", null);
+        rooms.add(gabyRoom);
+        Room markusRoom = new Room("martijnRoom", null, null, null);
+        rooms.add(markusRoom);
+        Room stijnRoom = new Room(null, null, "martijnRoom", null);
+        rooms.add(stijnRoom);
+        Room gertRoom = new Room(null, null, null, "martijnRoom");
+        rooms.add(gertRoom);
     }
 
-    Room lobby = new Room("nicoRoom", "martijnRoom", "patRoom", "gabyRoom");
-    Room nicoRoom = new Room(null, "lobby", null, null);
-    Room martijnRoom = new Room("lobby", "markusRoom", "gertRoom", "stijnRoom");
-    Room patRoom = new Room(null, null, null, "lobby");
-    Room gabyRoom = new Room(null,null,"lobby",null);
-    Room markusRoom = new Room("martijnRoom",null,null,null);
-    Room stijnRoom = new Room(null,null,"martijnRoom",null);
-    Room gertRoom = new Room(null,null,null,"martijnRoom");
 
-    public void movingToOtherRoom(String direction){
-
-        
+    public void movingToOtherRoom(String room, String direction){
+        System.out.println("Currently you are in ");
+        System.out.println("Please enter a direction, 'up', 'down', 'right, 'left' to move to another room. However, you will only move if it is possible. Otherwise, enter a new direction ");
     }
+
 }
 
 
