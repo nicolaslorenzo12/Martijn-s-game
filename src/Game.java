@@ -72,22 +72,7 @@ public class Game {
             boolean validSelection = player.moveToRoom(room,selection);
 
             if(validSelection){
-                if(selection.equals("up")){
-                    room = room.getUpRoom();
-                    System.out.println("You are in " + room.getName());
-                }
-                else if(selection.equals("down")) {
-                    room = room.getDownRoom();
-                    System.out.println("You are in " + room.getName());
-                }
-                else if(selection.equals("right")){
-                    room = room.getRightRoom();
-                    System.out.println("You are in " + room.getName());
-                }
-                else{
-                    room = room.getLeftRoom();
-                    System.out.println("You are in " + room.getName());
-                }
+                room = player.getNewRoom();
             }
             else{
                if(selection.equals("exit")){
@@ -97,7 +82,7 @@ public class Game {
                    System.out.println("You did not enter a good direction, please enter up, down, right or left");
                }
                else{
-                   System.out.println("There is not available an available in this direction");
+                   System.out.println("There is not an available room in this direction");
                }
             }
         }

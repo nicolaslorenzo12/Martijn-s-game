@@ -28,27 +28,39 @@ public class Player {
         this.room = room;
     }
 
-    public boolean moveToRoom(Room room, String direction){
+    public boolean moveToRoom(Room room1, String direction){
         boolean validRoom = false;
 
         if(direction.equals("up")){
-            if(room.getUpRoom() != null){
+            if(room1.getUpRoom() != null){
                 validRoom = true;
+                room1 = room1.getUpRoom();
+                setNewRoom(room1);
+                System.out.println("Now you are in " + room1.getName());
             }
         }
         else if(direction.equals("down")){
-            if(room.getDownRoom() != null){
+            if(room1.getDownRoom() != null){
                 validRoom = true;
+                room1 = room1.getDownRoom();
+                setNewRoom(room1);
+                System.out.println("Now you are in " + room1.getName());
             }
         }
         else if(direction.equals("right")){
-            if(room.getRightRoom() != null){
+            if(room1.getRightRoom() != null){
                 validRoom = true;
+                room1 = room1.getRightRoom();
+                setNewRoom(room1);
+                System.out.println("Now you are in " + room1.getName());
             }
         }
         else if(direction.equals("left")){
-            if(room.getLeftRoom() != null){
+            if(room1.getLeftRoom() != null){
                 validRoom = true;
+                room1 = room1.getLeftRoom();
+                setNewRoom(room1);
+                System.out.println("Now you are in " + room1.getName());
             }
         }
         else{
@@ -56,5 +68,13 @@ public class Player {
         }
 
         return validRoom;
+    }
+
+    private void setNewRoom(Room room){
+        this.room = room;
+    }
+
+    public Room getNewRoom(){
+        return room;
     }
 }
