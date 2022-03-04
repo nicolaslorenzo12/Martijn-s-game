@@ -12,60 +12,49 @@ public class Player {
         scanner = new Scanner(System.in);
     }
 
-    public void movingAround(Room room){
+    public String getName() {
+        return name;
+    }
 
-        String selection = "whatever";
+    public void setName(String name) {
+        this.name = name;
+    }
 
-        while(!selection.equals("exit")){
-            System.out.println("Please enter 'up' to go up, 'down' to go down, 'right' to go to the right or 'left' to go to the left");
-            selection = scanner.nextLine();
+    public Room getRoom() {
+        return room;
+    }
 
-            if(selection.equals("up") || selection.equals("down") || selection.equals("right") || selection.equals("left")){
-                if(selection.equals("up")){
-                    if(room.getUpRoom() == null){
-                        System.out.println("You can not go up");
-                    }
-                    else{
-                        room = room.getUpRoom();
-                        System.out.println("You are in " + room.getName()) ;
-                    }
-                }
-                else if(selection.equals("down")){
+    public void setRoom(Room room) {
+        this.room = room;
+    }
 
-                    if(room.getDownRoom() == null){
-                        System.out.println("You can not go down");
-                    }
-                    else{
-                        room = room.getDownRoom();
-                        System.out.println("You are in " + room.getName()) ;
-                    }
-                }
-                else if(selection.equals("right")){
-                    if(room.getRightRoom() == null){
-                        System.out.println("You can not go to the right");
-                    }
-                    else{
-                        room = room.getRightRoom();
-                        System.out.println("You are in " + room.getName()) ;
-                    }
-                }
-                else{
-                    if(room.getLeftRoom() == null){
-                        System.out.println("You can not go to the left");
-                    }
-                    else{
-                        room = room.getLeftRoom();
-                        System.out.println("You are in " + room.getName()) ;
-                    }
-                }
-            }
-            else if(!selection.equals("exit")){
-                System.out.println("Type a valid option");
-            }
-            else{
-                System.out.println("Bye");
+    public boolean moveToRoom(Room room, String direction){
+        boolean validRoom = false;
+
+        if(direction.equals("up")){
+            if(room.getUpRoom() != null){
+                validRoom = true;
             }
         }
+        else if(direction.equals("down")){
+            if(room.getDownRoom() != null){
+                validRoom = true;
+            }
+        }
+        else if(direction.equals("right")){
+            if(room.getRightRoom() != null){
+                validRoom = true;
+            }
+        }
+        else if(direction.equals("left")){
+            if(room.getLeftRoom() != null){
+                validRoom = true;
+            }
+        }
+        else{
+            System.out.print("");
+        }
 
+        return validRoom;
     }
 }
