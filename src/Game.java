@@ -1,15 +1,27 @@
 public class Game {
 
+
+    private final Room lobby;
+    private final Room martijnRoom;
+    private final Room nicoRoom;
+    private final Room patRoom;
+    private final Room gabyRoom;
+    private final Room gertRoom;
+    private final Room stijnRoom;
+    private final Room markusRoom;
+    private final Player nicolas;
+
     public Game() {
 
-        Room lobby = new Room();
-        Room martijnRoom = new Room();
-        Room nicoRoom = new Room();
-        Room patRoom = new Room();
-        Room gabyRoom = new Room();
-        Room gertRoom = new Room();
-        Room stijnRoom = new Room();
-        Room markusRoom = new Room();
+        lobby = new Room();
+        martijnRoom = new Room();
+        nicoRoom = new Room();
+        patRoom = new Room();
+        gabyRoom = new Room();
+        gertRoom = new Room();
+        stijnRoom = new Room();
+        markusRoom = new Room();
+        nicolas = new Player("Nicolas",lobby);
 
         lobby.setName("lobby");
         lobby.setUpRoom(nicoRoom);
@@ -26,10 +38,18 @@ public class Game {
         markusRoom.setUpRoom(martijnRoom);
         gertRoom.setLeftRoom(martijnRoom);
         stijnRoom.setRightRoom(martijnRoom);
+        nicoRoom.setName("Nico's Room");
+        martijnRoom.setName("Martijn's Room");
+        patRoom.setName("Paty's Room");
+        gabyRoom.setName("Gaby's Room");
+        gertRoom.setName("Gert's Room");
+        stijnRoom.setName("Stijn's Room");
+        markusRoom.setName("Markus's Room");
     }
 
     public static void main(String[] args) {
 
-
+        Game game = new Game();
+        game.nicolas.movingAround(game.lobby);
     }
 }
