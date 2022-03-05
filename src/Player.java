@@ -34,26 +34,24 @@ public class Player {
         if(direction.equals("up") && room.getUpRoom() !=null){
             validRoom = true;
             room = room.getUpRoom();
-            System.out.println("Now you are in " + room.getName());
         }
         else if(direction.equals("down") && room.getDownRoom() != null){
             validRoom = true;
             room = room.getDownRoom();
-            System.out.println("Now you are in " + room.getName());
         }
         else if(direction.equals("right") && room.getRightRoom() != null){
             validRoom = true;
             room = room.getRightRoom();
-            System.out.println("Now you are in " + room.getName());
         }
         else if(direction.equals("left") && room.getLeftRoom() !=  null){
             validRoom = true;
             room = room.getLeftRoom();
-            System.out.println("Now you are in " + room.getName());
         }
         else{
             System.out.print("");
         }
+
+        System.out.println("Now you are in " + room.getName());
 
         setRoom(room);
         return validRoom;
