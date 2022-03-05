@@ -72,7 +72,7 @@ public class Game {
             boolean validSelection = player.moveToRoom(room,selection);
 
             if(validSelection){
-                room = player.getNewRoom();
+                room = player.getRoom();
             }
             else{
                if(selection.equals("exit")){

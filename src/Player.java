@@ -28,53 +28,42 @@ public class Player {
         this.room = room;
     }
 
-    public boolean moveToRoom(Room room1, String direction){
+    public boolean moveToRoom(Room room, String direction){
         boolean validRoom = false;
 
         if(direction.equals("up")){
-            if(room1.getUpRoom() != null){
+            if(room.getUpRoom() != null){
                 validRoom = true;
-                room1 = room1.getUpRoom();
-                setNewRoom(room1);
-                System.out.println("Now you are in " + room1.getName());
+                room = room.getUpRoom();
+                System.out.println("Now you are in " + room.getName());
             }
         }
         else if(direction.equals("down")){
-            if(room1.getDownRoom() != null){
+            if(room.getDownRoom() != null){
                 validRoom = true;
-                room1 = room1.getDownRoom();
-                setNewRoom(room1);
-                System.out.println("Now you are in " + room1.getName());
+                room = room.getDownRoom();
+                System.out.println("Now you are in " + room.getName());
             }
         }
         else if(direction.equals("right")){
-            if(room1.getRightRoom() != null){
+            if(room.getRightRoom() != null){
                 validRoom = true;
-                room1 = room1.getRightRoom();
-                setNewRoom(room1);
-                System.out.println("Now you are in " + room1.getName());
+                room = room.getRightRoom();
+                System.out.println("Now you are in " + room.getName());
             }
         }
         else if(direction.equals("left")){
-            if(room1.getLeftRoom() != null){
+            if(room.getLeftRoom() != null){
                 validRoom = true;
-                room1 = room1.getLeftRoom();
-                setNewRoom(room1);
-                System.out.println("Now you are in " + room1.getName());
+                room = room.getLeftRoom();
+                System.out.println("Now you are in " + room.getName());
             }
         }
         else{
             System.out.print("");
         }
 
+        setRoom(room);
         return validRoom;
-    }
-
-    private void setNewRoom(Room room){
-        this.room = room;
-    }
-
-    public Room getNewRoom(){
-        return room;
     }
 }
