@@ -85,6 +85,8 @@ public class Game {
                    System.out.println("There is not an available room in this direction");
                }
             }
+
+            System.out.println(room.getWeapon());
         }
 
     }

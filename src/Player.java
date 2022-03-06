@@ -6,6 +6,7 @@ public class Player {
     private Room room;
     private Scanner scanner;
 
+
     public Player(String name, Room room){
         this.name = name;
         this.room = room;

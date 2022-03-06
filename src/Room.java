@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Room {
 
@@ -9,9 +10,15 @@ public class Room {
     private Room leftRoom;
     private Room rightRoom;
     private String name;
+    Weapon weapon = Weapon.gun.getRandomWeapon();
+    Weapon weapon1 = Weapon.bow.getRandomWeapon();
+    Weapon weapon2 = Weapon.dagger.getRandomWeapon();
+    Weapon[] weapons = {weapon,weapon1, weapon2};
+    Random random;
 
     public Room() {
         scanner = new Scanner(System.in);
+        random = new Random();
     }
 
 
@@ -53,6 +60,18 @@ public class Room {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Weapon getWeapon(){
+        int x = random.nextInt(weapons.length);
+        showWeapons();
+        return weapons[x];
+    }
+
+    public void showWeapons(){
+        for (Weapon value : weapons) {
+            System.out.println(value + " is available");
+        }
     }
 
 }
