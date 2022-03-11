@@ -52,7 +52,9 @@ public class Player {
             System.out.print("");
         }
 
-        System.out.println("Now you are in " + room.getName());
+        if(validRoom) {
+            System.out.println("Now you are in " + room.getName());
+        }
 
         setRoom(room);
         return validRoom;

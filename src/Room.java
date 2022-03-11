@@ -10,11 +10,11 @@ public class Room {
     private Room leftRoom;
     private Room rightRoom;
     private String name;
-    Weapon weapon = Weapon.gun.getRandomWeapon();
-    Weapon weapon1 = Weapon.bow.getRandomWeapon();
-    Weapon weapon2 = Weapon.dagger.getRandomWeapon();
-    Weapon[] weapons = {weapon,weapon1, weapon2};
-    Random random;
+    private final Weapon weapon = Weapon.getRandomWeapon();
+    private final Weapon weapon1 = Weapon.getRandomWeapon();
+    private final Weapon weapon2 = Weapon.getRandomWeapon();
+    private final Weapon[] weapons = {weapon,weapon1, weapon2};
+    private final Random random;
 
     public Room() {
         scanner = new Scanner(System.in);

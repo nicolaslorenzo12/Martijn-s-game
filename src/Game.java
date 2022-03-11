@@ -73,6 +73,7 @@ public class Game {
 
             if(validSelection){
                 room = player.getRoom();
+                System.out.println(room.getWeapon());
             }
             else{
                if(selection.equals("exit")){
@@ -86,7 +87,6 @@ public class Game {
                }
             }
 
-            System.out.println(room.getWeapon());
         }
 
     }
