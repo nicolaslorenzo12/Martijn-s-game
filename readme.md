@@ -4,10 +4,10 @@
 You are a player lost in a big building
 
 The player has
-	- A name
-	- A Health status (0 - 100)
-	- An inventory
-	- Possible a weapon in his hand
+- A name
+- A Health status (0 - 100)
+- An inventory
+- Possible a weapon in his hand
 	
 - A player can move up down right left, by doing this he can move to another room
 - A player can look for the exits of his current room (like if he can go up , down , right or left)
