@@ -2,12 +2,12 @@ import java.util.Random;
 
 public enum Weapon {
 
-    gun(),
-    rifle(),
-    shotGun(),
-    Sword(),
-    dagger(),
-    bow();
+    gun,
+    rifle,
+    shotGun,
+    Sword,
+    dagger,
+    bow;
 
     public static Weapon getRandomWeapon(){
         Random random = new Random();
