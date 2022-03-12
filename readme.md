@@ -8,13 +8,14 @@ The player has
 - A Health status (0 - 100)
 - An inventory
 - Possible a weapon in his hand
-	
-- A player can move up down right left, by doing this he can move to another room
-- A player can look for the exits of his current room (like if he can go up , down , right or left)
-- A player can look if there is any loot inside the room
-- A player can pickup loot 
-- A player can show his inventory
-- A player can hold a weapon in his hand
+
+The player can
+- move up down right left, by doing this he can move to another room
+- look for the exits of his current room (like if he can go up , down , right or left)
+- look if there is any loot inside the room
+- can pickup loot 
+- can show his inventory
+- hold a weapon in his hand
 	
 The big building has multiple Rooms each room has atleast 1 exit and maximum 4.
 In a room a player can find loot and pick it up and put it in his inventory (weapons and other loot like diamonds)
