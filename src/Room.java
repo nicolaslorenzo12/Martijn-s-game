@@ -4,18 +4,24 @@ import java.util.Random;
 
 public class Room {
 
-    private final Scanner scanner;
+    private Scanner scanner;
     private Room upRoom;
     private Room downRoom;
     private Room leftRoom;
     private Room rightRoom;
     private String name;
-    private final Weapon[] weapons;
-
-    private final Random random;
+    private Weapon[] weapons;
+    private Weapon weapon;
+    private Random random;
 
     public Room() {
-        weapons = new Weapon[]{Weapon.getRandomWeapon(),Weapon.getRandomWeapon(), Weapon.getRandomWeapon()};
+        weapon = new Sword();
+        weapons = new Weapon[3];
+        weapons[0] = weapon.getRandomWeapon();
+        weapons[1] = weapon.getRandomWeapon();
+        weapons[2] = weapon.getRandomWeapon();
+        scanner = new Scanner(System.in);
+        random = new Random();
         scanner = new Scanner(System.in);
         random = new Random();
     }
@@ -61,13 +67,13 @@ public class Room {
         this.name = name;
     }
 
-    public Weapon getWeapon(){
+    public Weapon getWeapon() {
         int x = random.nextInt(weapons.length);
         showWeapons();
         return weapons[x];
     }
 
-    public void showWeapons(){
+    private void showWeapons(){
         for (Weapon value : weapons) {
             System.out.println(value + " is available");
         }
