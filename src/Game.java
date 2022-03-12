@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Game {
@@ -65,15 +66,18 @@ public class Game {
     public void selectDirection(Room room, Player player){
 
         String selection = "whatever";
-
+        int firstTime = 0;
         while(!selection.equals("exit")){
+            if(firstTime < 1){
+                System.out.println("Now you are in " + room.getName());
+                firstTime++;
+            }
             System.out.println("Please enter 'up' to go up, 'down' to go down, 'right' to go to the right or 'left' to go to the left");
             selection = scanner.nextLine();
             boolean validSelection = player.moveToRoom(room,selection);
 
             if(validSelection){
                 room = player.getRoom();
-                System.out.println(room.getWeapon());
             }
             else{
                if(selection.equals("exit")){

@@ -9,4 +9,10 @@ public class Bat extends Weapon{
         return damage;
     }
 
+    @Override
+    String getName() {
+        return "Bat";
+    }
+
+
 }

@@ -10,20 +10,25 @@ public class Room {
     private Room leftRoom;
     private Room rightRoom;
     private String name;
-    private Weapon[] weapons;
+    private ArrayList<Weapon> weapons;
+    private Weapon[] randomWeapons;
     private Weapon weapon;
     private Random random;
 
     public Room() {
-        weapon = new Sword();
-        weapons = new Weapon[3];
-        weapons[0] = weapon.getRandomWeapon();
-        weapons[1] = weapon.getRandomWeapon();
-        weapons[2] = weapon.getRandomWeapon();
+
+        weapons = new ArrayList<>();
+        weapons.add(new Bat());
+        weapons.add(new Bow());
+        weapons.add(new Dagger());
+        weapons.add(new Hammer());
+        weapons.add(new ShotGun());
+        weapons.add(new Sword());
         scanner = new Scanner(System.in);
         random = new Random();
         scanner = new Scanner(System.in);
         random = new Random();
+        randomWeapons = new Weapon[3];
     }
 
 
@@ -67,15 +72,29 @@ public class Room {
         this.name = name;
     }
 
-    public Weapon getWeapon() {
-        int x = random.nextInt(weapons.length);
-        showWeapons();
-        return weapons[x];
-    }
+    //public Weapon getRandomWeapon(){
+//
+    //    int indexOfRandomWeapon = random.nextInt(weapons.size());
+    //    return weapons.get(indexOfRandomWeapon);
+    //}
 
-    private void showWeapons(){
-        for (Weapon value : weapons) {
-            System.out.println(value + " is available");
+    //public void showWeapons(){
+    //    for (Weapon value : weapons) {
+    //        System.out.println(value + " is available");
+    //    }
+    //}
+
+    public void getRandomWeapons(){
+        int indexArrayWeapon = 0;
+        int indexRandomWeapon;
+
+        while(indexArrayWeapon < 3){
+            indexRandomWeapon = random.nextInt(weapons.size());
+            randomWeapons[indexArrayWeapon] = weapons.get(indexRandomWeapon);
+            indexArrayWeapon++;
+        }
+        for(Weapon weapon1 : randomWeapons){
+            System.out.println(weapon1.getName());
         }
     }
 

@@ -7,4 +7,9 @@ public class Hammer extends Weapon{
     int getDamage() {
         return damage;
     }
+
+    @Override
+    String getName() {
+        return "Hammer";
+    }
 }
